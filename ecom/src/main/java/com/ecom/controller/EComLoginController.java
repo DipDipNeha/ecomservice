@@ -25,7 +25,7 @@ public class EComLoginController {
 	@PostMapping("/signup")
 	public ResponseEntity<Response> signup(@RequestBody UserProfile profile){
 		
-		UserProfile signup = eComServiceImpl.signup(profile);
+		Response signup = eComServiceImpl.signup(profile);
 		return new ResponseEntity<Response>(signup,HttpStatus.OK);
 		
 	}
@@ -33,8 +33,8 @@ public class EComLoginController {
 	@PostMapping("/signin")
 	public ResponseEntity<Response> signin(@RequestBody UserProfile profile){
 		
-		UserProfile signup = eComServiceImpl.signup(profile);
-		return new ResponseEntity<Response>(signup,HttpStatus.OK);
+		Response signin = eComServiceImpl.signin(profile);
+		return new ResponseEntity<Response>(signin,HttpStatus.OK);
 		
 	}
 	
