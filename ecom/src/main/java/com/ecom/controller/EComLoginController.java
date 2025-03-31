@@ -1,5 +1,6 @@
 package com.ecom.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecom.entity.UserProfile;
+import com.ecom.model.Response;
 import com.ecom.service.impl.EComServiceImpl;
 
 @RestController
@@ -21,16 +23,18 @@ public class EComLoginController {
 	}
 
 	@PostMapping("/signup")
-	public ResponseEntity<UserProfile> signup(@RequestBody UserProfile profile){
+	public ResponseEntity<Response> signup(@RequestBody UserProfile profile){
 		
-		return new ResponseEntity<UserProfile>(null);
+		UserProfile signup = eComServiceImpl.signup(profile);
+		return new ResponseEntity<Response>(signup,HttpStatus.OK);
 		
 	}
 	
 	@PostMapping("/signin")
-	public ResponseEntity<UserProfile> signin(@RequestBody UserProfile profile){
+	public ResponseEntity<Response> signin(@RequestBody UserProfile profile){
 		
-		return new ResponseEntity<UserProfile>(null);
+		UserProfile signup = eComServiceImpl.signup(profile);
+		return new ResponseEntity<Response>(signup,HttpStatus.OK);
 		
 	}
 	

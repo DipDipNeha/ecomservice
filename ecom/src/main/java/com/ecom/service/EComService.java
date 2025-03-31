@@ -4,6 +4,7 @@
 package com.ecom.service;
 
 import com.ecom.entity.UserProfile;
+import com.ecom.model.Response;
 
 /**
  * 
@@ -12,8 +13,8 @@ import com.ecom.entity.UserProfile;
 public interface EComService {
 
 	
-	public UserProfile signin(UserProfile profile);
-	public UserProfile signup(UserProfile profile);
+	public Response signin(UserProfile profile);
+	public Response signup(UserProfile profile);
 	
 	
 }
